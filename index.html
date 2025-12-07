@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+<html lang="ge">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Café MFC</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+
+    
+    <header class="header">
+
+        <a href="#hero" class="header-logo">Café MFC</a>
+
+        <div class="header-right">
+
+            <div class="view-toggles">
+                <button id="viewToggle3" class="view-toggle-btn active" data-view="grid-3" aria-label="Показать 3 колонки">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H10V10H4V4ZM4 14H10V20H4V14ZM14 4H20V10H14V4ZM14 14H20V20H14V14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button id="viewToggle2" class="view-toggle-btn" data-view="grid-2" aria-label="Показать 2 колонки">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 3H10V21H3V3ZM14 3H21V21H14V3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button id="viewToggle1" class="view-toggle-btn" data-view="list-1" aria-label="Показать 1 колонку (список)">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+            <button id="langBtn" class="lang-btn" aria-label="Toggle language">🌍</button>
+
+            <button id="burgerBtn" class="burger-btn" aria-label="Open menu">☰</button>
+
+        </div>
+
+    </header>
+
+
+
+    <div id="overlayMenu" class="overlay" aria-hidden="true">
+
+        <div class="overlay-top">
+
+            <button id="backBtn" class="back-btn" aria-label="Close menu">←</button>
+
+        </div>
+
+        <nav class="overlay-nav">
+          
+            <button class="overlay-item" data-section="about" data-scroll="about" id="overlay-about" data-i18n="nav_about">О нас</button>
+          
+            <button class="overlay-item" data-section="popular" data-scroll="popular" id="overlay-popular" data-i18n="nav_popular">Популярное</button>
+            
+            <div class="overlay-submenu-wrapper" id="overlay-menu-wrapper">
+
+                <button class="overlay-item has-submenu" data-section="menu" data-scroll="menu-shawarma" id="overlay-menu" data-i18n="nav_menu">Меню</button>
+
+                <div class="submenu-list">
+                    <button class="overlay-subitem" data-scroll="menu-shawarma" data-i18n="menu_shawarma">Шаурма</button>
+
+                    <button class="overlay-subitem" data-scroll="menu-breakfast" data-i18n="menu_breakfast">Завтрак</button>
+
+                    <button class="overlay-subitem" data-scroll="menu-salads" data-i18n="menu_salads">Салаты</button>
+
+                    <button class="overlay-subitem" data-scroll="menu-fastfood" data-i18n="menu_fastfood">Фастфуд</button>
+                    
+                    <button class="overlay-subitem" data-scroll="gallery" data-i18n="menu_show_all">Показать все блюда</button>
+
+                </div>
+
+            </div>
+
+            
+            <button class="overlay-item" data-section="contacts" data-scroll="contacts" id="overlay-contacts" data-i18n="nav_contacts">Контакты</button>
+
+            <button class="overlay-item" data-section="memo" data-scroll="memo" id="overlay-memo" data-i18n="memo_label">Написать</button>
+
+
+
+            <div class="overlay-line"></div>
+
+            <button class="overlay-item overlay-theme-toggle" id="themeToggle" data-i18n="theme_light">Светлая тема</button>
+
+            <button class="overlay-item" id="langToggle"></button>
+
+        </nav>
+
+    </div>
+
+
+
+    <section class="hero" id="hero">
+
+        <div class="hero-logo"><img src="assets/img/logo.jpg" alt="Café MFC logo"></div>
+
+        <h1 class="hero-title" data-i18n="hero_title">Грузинская кухня в центре Тбилиси</h1>
+
+        <div class="hero-buttons">
+
+            <button class="hero-btn" data-scroll="about" id="hero-about" data-i18n="nav_about">О нас</button>
+            
+            <button class="hero-btn" data-scroll="popular" id="hero-popular" data-i18n="nav_popular">Популярное</button>
+
+            
+            <div class="hero-submenu-wrapper" id="hero-menu-wrapper">
+
+                <button class="hero-btn has-submenu" data-scroll="menu-shawarma" id="hero-menu" data-i18n="nav_menu">Меню</button>
+
+                <div class="submenu-list">
+
+                    <button class="hero-subitem" data-scroll="menu-shawarma" data-i18n="menu_shawarma">Шаурма</button>
+
+                    <button class="hero-subitem" data-scroll="menu-breakfast" data-i18n="menu_breakfast">Завтрак</button>
+
+                    <button class="hero-subitem" data-scroll="menu-salads" data-i18n="menu_salads">Салаты</button>
+
+                    <button class="hero-subitem" data-scroll="menu-fastfood" data-i18n="menu_fastfood">Фастфуд</button>
+                    
+                    <button class="hero-subitem" data-scroll="gallery" data-i18n="menu_show_all">Показать все блюда</button>
+
+                </div>
+
+            </div>
+
+            <button class="hero-btn" data-scroll="contacts" id="hero-contacts" data-i18n="nav_contacts">Контакты</button>
+
+            <button class="hero-btn" data-scroll="memo" id="hero-memo" data-i18n="memo_label">Написать</button>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="about-section" id="about">
+
+        <h2 data-i18n="about_title">О нас</h2>
+
+        <p data-i18n="about_text">Café MFC — уютное место с традиционной грузинской кухней в центре Тбилиси.</p>
+
+        <img style="max-width: 100%; height: auto;" src="assets/img/interior2.jpg" alt="interior2">
+
+        <div class="back-to-top" data-scroll="hero" data-i18n="back_to_top">↑ Назад</div>
+
+    </section>
+
+    <section id="popular" class="menu-carousel-section">
+        <h2 data-i18n="popular_menu_title">Популярное</h2>
+        
+        <div class="carousel-wrapper carousel-wrapper--with-arrows">
+            <div id="popularCarouselTrack">
+                </div>
+            
+            <button id="prevPopularBtn" class="carousel-control prev" aria-label="Предыдущее популярное блюдо">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button id="nextPopularBtn" class="carousel-control next" aria-label="Следующее популярное блюдо">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            
+            <div id="popularIndicators">
+            </div>
+        </div>
+        <div class="back-to-top" data-scroll="hero" data-i18n="back_to_top">↑ Назад</div>
+    </section>
+
+    <section class="menu-section" id="menu-shawarma">
+
+        <h2 data-i18n="shawarma_title">Шаурма</h2>
+
+        <div class="menu-grid">
+
+            
+            <div class="menu-card">
+
+                <img src="assets/img/2-3-4.jpg" alt="Shawarma small">
+
+                <h3 data-i18n="dish_shawarma_small">Шаурма малая</h3>
+
+                <p class="desc" data-i18n="desc_shawarma_small">Состав: курица, лук, айсберг, помидор, острый перец, майонез, кетчуп.</p>
+
+                <p class="price" data-i18n="price_shawarma_small">11 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/2-3-4.jpg" alt="Shawarma medium">
+
+                <h3 data-i18n="dish_shawarma_medium">Шаурма средняя</h3>
+
+                <p class="desc" data-i18n="desc_shawarma_medium">Состав: курица, лук, айсберг, помидор, острый перец, майонез, кетчуп.</p>
+
+                <p class="price" data-i18n="price_shawarma_medium">13 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/2-3-4.jpg" alt="Shawarma large">
+
+                <h3 data-i18n="dish_shawarma_large">Шаурма большая</h3>
+
+                <p class="desc" data-i18n="desc_shawarma_large">Состав: курица, лук, айсберг, помидор, острый перец, майонез, кетчуп.</p>
+
+                <p class="price" data-i18n="price_shawarma_large">15 GEL</p>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="back-to-top" data-scroll="hero" data-i18n="back_to_top">↑ Назад</div>
+
+    </section>
+
+    <section class="menu-section" id="menu-breakfast">
+
+        <h2 data-i18n="breakfast_title">Завтрак</h2>
+
+        <div class="menu-grid">
+
+            
+            <div class="menu-card">
+
+                <img src="assets/img/5.jpg" alt="Omelet with salad">
+
+                <h3 data-i18n="dish_omelet">Омлет с салатом</h3>
+
+                <p class="desc" data-i18n="desc_omelet">2 яйца, огурец, помидор, красный лук.</p>
+
+                <p class="price" data-i18n="price_omelet">7 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/6.jpg" alt="Scramble with salsa">
+
+                <h3 data-i18n="dish_scramble">Скрэмбл с сальсой</h3>
+
+                <p class="desc" data-i18n="desc_scramble">Тостовый хлеб, 2 яйца, сальса.</p>
+
+                <p class="price" data-i18n="price_scramble">7 GEL</p>
+
+            </div>
+
+            
+            <div class="menu-card">
+
+                <img src="assets/img/7.jpg" alt="Pasta Alfredo">
+
+                <h3 data-i18n="dish_pasta_alfredo">Паста Альфредо</h3>
+
+                <p class="desc" data-i18n="desc_pasta_alfredo">Паста феттучини, сливки, куриное филе, итальянские специи.</p>
+
+                <p class="price" data-i18n="price_pasta_alfredo">13 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/8.jpg" alt="Pasta Bolognese">
+
+                <h3 data-i18n="dish_pasta_bolognese">Паста Болоньезе</h3>
+
+                <p class="desc" data-i18n="desc_pasta_bolognese">Спагетти, соус, смешанный фарш (говядина и курица), итальянские специи, свежий помидор.</p>
+
+                <p class="price" data-i18n="price_pasta_bolognese">15 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/9.jpg" alt="Chicken Cutlet">
+
+                <h3 data-i18n="dish_chicken_cutlet">Куриная котлета</h3>
+
+                <p class="desc" data-i18n="desc_chicken_cutlet">Куриное филе, кинза, чеснок, лук, панировочная мука, специи.</p>
+
+                <p class="price" data-i18n="price_chicken_cutlet">3 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/10.jpg" alt="Homemade Cutlet">
+
+                <h3 data-i18n="dish_homemade_cutlet">Домашняя котлета (говядина + филе)</h3>
+
+                <p class="desc" data-i18n="desc_homemade_cutlet">Говядина, курица, чеснок, лук, специи, кинза.</p>
+
+                <p class="price" data-i18n="price_homemade_cutlet">3.90 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/11.jpg" alt="Lula Kebab">
+
+                <h3 data-i18n="dish_lula_kebab">Люля-кебаб (говядина + куриное филе)</h3>
+
+                <p class="desc" data-i18n="desc_lula_kebab">Говядина, курица, чеснок, лук, специи, кинза.</p>
+
+                <p class="price" data-i18n="price_lula_kebab">7.50 GEL</p>
+
+            </div>
+
+            
+            <div class="menu-card">
+
+                <img src="assets/img/12.jpg" alt="Mashed Potatoes">
+
+                <h3 data-i18n="dish_puree">Пюре — 150g</h3>
+
+                <p class="desc" data-i18n="desc_puree">Молоко, сливочное масло, картофель.</p>
+
+                <p class="price" data-i18n="price_puree">3 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/13.jpg" alt="Buckwheat">
+
+                <h3 data-i18n="dish_buckwheat">Гречка — 150g</h3>
+
+                <p class="desc" data-i18n="desc_buckwheat">Растительное масло, гречка.</p>
+
+                <p class="price" data-i18n="price_buckwheat">5 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/14.jpg" alt="Rice">
+
+                <h3 data-i18n="dish_rice">Рис — 150g</h3>
+
+                <p class="desc" data-i18n="desc_rice">Кукуруза, болгарский перец, рис.</p>
+
+                <p class="price" data-i18n="price_rice">5.50 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/15.jpg" alt="Penovani Khachapuri">
+
+                <h3 data-i18n="dish_penovani_khachapuri">Пеновани Хачапури</h3>
+
+                <p class="desc" data-i18n="desc_penovani_khachapuri">Слоеное тесто, имеретинский сыр.</p>
+
+                <p class="price" data-i18n="price_penovani_khachapuri">5 GEL</p>
+
+            </div>
+
+            
+            <div class="menu-card">
+
+                <img src="assets/img/16.jpg" alt="Penovani Lobiani">
+
+                <h3 data-i18n="dish_penovani_lobiani">Пеновани Лобиани</h3>
+
+                <p class="desc" data-i18n="desc_penovani_lobiani">Фасоль, слоеное тесто.</p>
+
+                <p class="price" data-i18n="price_penovani_lobiani">3.80 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/17.jpg" alt="Penovani Kubdari">
+
+                <h3 data-i18n="dish_penovani_kubdari">Пеновани Кубдари</h3>
+
+                <p class="desc" data-i18n="desc_penovani_kubdari">Говядина и куриное мясо, лук, чеснок, кинза, специи.</p>
+
+                <p class="price" data-i18n="price_penovani_kubdari">7 GEL</p>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="back-to-top" data-scroll="hero" data-i18n="back_to_top">↑ Назад</div>
+
+    </section>
+
+    <section class="menu-section" id="menu-salads">
+
+        <h2 data-i18n="menu_salads">Салаты</h2>
+
+        <div class="menu-grid">
+
+            
+            <div class="menu-card">
+
+                <img src="assets/img/18.jpg" alt="Salad Olivier">
+
+                <h3 data-i18n="dish_olivier">Салат Оливье — 250g</h3>
+
+                <p class="desc" data-i18n="desc_olivier">Куриное филе, горошек, яйцо, майонез, маринованный огурец, морковь, картофель.</p>
+
+                <p class="price" data-i18n="price_olivier">5 GEL</p>
+
+            </div>
+
+            
+            <div class="menu-card">
+
+                <img src="assets/img/19.jpg" alt="Chicken Salad">
+
+                <h3 data-i18n="dish_chicken_salad">Куриный салат — 250g</h3>
+
+                <p class="desc" data-i18n="desc_chicken_salad">Куриное филе, черный перец, красный болгарский перец, огурец, майонез.</p>
+
+                <p class="price" data-i18n="price_chicken_salad">9.50 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/20.jpg" alt="Eggplant Salad">
+
+                <h3 data-i18n="dish_eggplant_salad">Салат из баклажанов — 250g</h3>
+
+                <p class="desc" data-i18n="desc_eggplant_salad">Баклажан, свежий помидор, красный лук, кинза, грецкий орех.</p>
+
+                <p class="price" data-i18n="price_eggplant_salad">9.00 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/21.jpg" alt="Caesar Salad">
+
+                <h3 data-i18n="dish_caesar">Салат Цезарь — 350g</h3>
+
+                <p class="desc" data-i18n="desc_caesar">Листья салата, куриное филе, майонезный соус, помидор, яйцо, сыр Пармезан.</p>
+
+                <p class="price" data-i18n="price_caesar">12 GEL</p>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="back-to-top" data-scroll="hero" data-i18n="back_to_top">↑ Назад</div>
+
+    </section>
+
+    <section class="menu-section" id="menu-fastfood">
+
+        <h2 data-i18n="menu_fastfood">Фастфуд</h2>
+
+        <div class="menu-grid">
+
+            
+            <div class="menu-card">
+
+                <img src="assets/img/peperoni_.jpg" alt="Pizza Pepperoni">
+
+                <h3 data-i18n="dish_pizza_pepperoni">Пицца Пеперони</h3>
+
+                <p class="desc" data-i18n="desc_pizza_pepperoni">Большая пицца с колбасками Пеперони. Цена в заведении: 15 GEL.</p>
+
+                <p class="price" data-i18n="price_pizza_pepperoni">23 GEL (доставка)</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/margarita_.jpg" alt="Pizza Margarita">
+
+                <h3 data-i18n="dish_pizza_margarita">Пицца Маргарита</h3>
+
+                <p class="desc" data-i18n="desc_pizza_margarita">Классическая пицца с томатами и моцареллой. Цена в заведении: 13 GEL.</p>
+
+                <p class="price" data-i18n="price_pizza_margarita">21 GEL (доставка)</p>
+
+            </div>
+
+            <div class="menu-card">
+
+                <img src="assets/img/22.jpg" alt="French Fries">
+
+                <h3 data-i18n="dish_french_fries">Картофель фри — 150g</h3>
+
+                <p class="desc" data-i18n="desc_french_fries">Картофель</p>
+
+                <p class="price" data-i18n="price_french_fries">5 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/23.jpg" alt="Chicken Nuggets">
+
+                <h3 data-i18n="dish_nuggets">Куриные наггетсы — 150g</h3>
+
+                <p class="desc" data-i18n="desc_nuggets">Куриное филе, цитрус, специи, панировочная мука.</p>
+
+                <p class="price" data-i18n="price_nuggets">4.50 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/24.jpg" alt="Sandwich">
+
+                <h3 data-i18n="dish_sandwich">Сэндвич</h3>
+
+                <p class="desc" data-i18n="desc_sandwich">Куриная котлета, лист салата, помидор, сыр Чеддер, маринованный огурец, соус Барбекю, тостерный хлеб.</p>
+
+                <p class="price" data-i18n="price_sandwich">8 GEL</p>
+
+            </div>
+
+
+
+            <div class="menu-card">
+
+                <img src="assets/img/25.jpg" alt="Mexican Potatoes">
+
+                <h3 data-i18n="dish_mexican_fries">Мексиканский картофель — 200g</h3>
+
+                <p class="desc" data-i18n="desc_mexican_fries">Картофель с кожурой, черный перец, паприка, чеснок, орегано.</p>
+
+                <p class="price" data-i18n="price_mexican_fries">5 GEL</p>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="back-to-top" data-scroll="hero" data-i18n="back_to_top">↑ Назад</div>
+
+    </section>
+
+    
+    <section class="menu-section" id="gallery">
+
+        <h2 data-i18n="menu_show_all">Галерея всех блюд</h2>
+
+        <div class="menu-grid">
+            </div>
+
+        <div class="back-to-top" data-scroll="hero" data-i18n="back_to_top">↑ Назад</div>
+
+    </section>
+    
+    
+    <section class="contacts-section" id="contacts">
+        <h2 data-i18n="contacts_title">Контакты</h2>
+        <div class="contact-grid">
+            
+            <div class="contact-info">
+                <p class="address-text">
+                    <span class="icon">📍</span>
+                    <span data-i18n="contacts_address">Тбилиси, ул. Ноя Хомерикис 21</span>
+                </p>
+                
+                <div class="contact-links">
+    <a href="tel:+995558725917" class="contact-link phone link-underline" title="Позвонить по телефону">
+        <span class="icon">📞</span>
+        <span data-i18n="contacts_phone_label">Телефон:</span> 
+        <span data-i18n="contacts_phone_link">+995 558 72 59 17</span> 
+    </a>
+
+    <a href="https://wa.me/995558725917" target="_blank" class="contact-link link-underline" title="Написать в WhatsApp">
+        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339.4 55.4 283.9 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-31.5c34.9 19.1 73.6 29.4 113.3 29.4 122.4 0 222-99.6 222-222 0-39.1-10.2-77.3-29.6-111zM223.9 448c-39.1 0-77.3-10.2-111-29.6l-6.8-3.9-74.8 20.1 20.1-74.8-3.9-6.8c-19.4-33.7-29.6-72-29.6-111.4 0-101.4 82.3-184 184-184 50.8 0 98.8 20.1 134.1 55.4 35.4 35.4 55.4 83.4 55.4 134.1 0 101.4-82.3 184-184 184zm117.1-147.2c-1.4-2.8-5-4.3-7.7-5.6-2.9-1.3-17.7-8.6-20.5-9.6-2.9-1.1-5-1.5-7.1 1.5-2.2 3-8.6 9.6-10.5 11.5-1.9 2-3.8 2.2-7 1.5-3.1-.7-13.1-4.8-24.9-15.3-9.9-8.7-16.7-19.4-18.7-22.9-2-3.4-.2-5.3 1.9-7.1 1.7-1.5 3.8-3.9 5.8-5.8 2-2 2.6-3.4 3.1-5.6s.4-4.2-.2-6.2c-.6-1.9-5-12.2-6.9-16.7-1.7-4-.4-7.2 1.3-7.2.7 0 1.9.1 3.1.1 2 .1 4.3.4 5.8 1.9 1.4 1.4 10.5 10.2 12 13.9 1.4 3.7 2.4 8.1.1 12.2-1.2 2-7 8.6-8.2 9.8-1.2 1.2-2.3 2.1-.8 4.7 1.5 2.5 5.5 8.9 11.9 13.5 6.4 4.5 12.1 6.3 13.9 7.4 1.7 1.1 2.8 1.8 3.8 1.4 1-.4 7.7-3.1 9.9-6.3 2.2-3.2 2.2-5.8 1.5-6.3-.7-.5-2.6-.8-5.3-1.4z"/></svg>
+        <span data-i18n="contacts_whatsapp_label">WhatsApp для предварительных заказов</span>
+    </a>
+    
+    <a href="https://www.facebook.com/mfccaffe" target="_blank" class="contact-link link-underline" title="Перейти на страницу Facebook">
+        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256C504 119 392 8 256 8S8 119 8 256c0 123.78 90.69 226.65 209.25 245.89V322.25h-63V256h63v-54.64c0-62.84 37-97.08 94.4-97.08 27.05 0 54.88 4.84 54.88 4.84v60.1H371c-31.22 0-40.45 19.31-40.45 38.63V256h68.79l-11 66.25h-57.79V501.9C413.31 482.65 504 379.78 504 256z"/></svg>
+        <span data-i18n="contacts_facebook_label">Наша страница в Facebook</span>
+    </a>
+</div>
+            </div>
+
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197.8920958742882!2d44.75548767939103!3d41.77708514131553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404473852084534f%3A0x867332d75f6d5ed0!2s21%20Noe%20Khomeriki%20St%2C%20Tbilisi!5e0!3m2!1sen!2sge!4v1700998083893!5m2!1sen!2sge" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+        <div class="back-to-top" data-scroll="hero" data-i18n="back_to_top">↑ Назад</div>
+    </section>
+
+    <section class="memo-section" id="memo">
+
+        <h2 id="memoLabel" data-i18n="memo_label">Ваше сообщение</h2>
+
+        <textarea id="memoField" maxlength="1000" data-i18n-placeholder="memo_placeholder" placeholder="Напишите здесь..."></textarea>
+
+        <div class="memo-buttons">
+
+            <button id="memoSend" data-i18n="memo_send">Отправить</button>
+
+            <button id="memoCancel" data-i18n="memo_cancel">Отменить</button>
+
+        </div>
+
+        <div class="back-to-top" data-scroll="hero" data-i18n="back_to_top">↑ Назад</div>
+
+    </section>
+
+
+
+    <footer class="footer">
+
+        <span>MellowCode Studio © 2025</span>
+
+    </footer>
+
+    <script src="assets/js/lang.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
