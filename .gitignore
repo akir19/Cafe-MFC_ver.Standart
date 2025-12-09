@@ -1,0 +1,32 @@
+# Системные файлы macOS/Linux
+.DS_Store
+
+# Файлы миниатюр Windows
+Thumbs.db
+
+# Node.js
+/node_modules
+
+# Python
+__pycache__/
+*.pyc
+/venv
+.idea/
+
+# Composer (PHP)
+/vendor
+
+# Логи
+*.log
+/logs
+
+# Настройки среды (обычно .env или .local)
+.env
+.env.local
+.local.settings.json
+
+# Файлы IDE (Visual Studio Code)
+.vscode/
+
+# Файл, который я хочу исключить из последнего коммита
+readme.txt
